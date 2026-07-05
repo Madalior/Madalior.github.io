@@ -154,7 +154,7 @@ export default function App() {
       </main>
 
       {/* Content Sections */}
-      <section className="relative z-10 w-full px-4 sm:px-6 pb-8 sm:pb-12 space-y-20 sm:space-y-24">
+      <section className="relative z-10 w-full px-4 sm:px-6 pb-8 sm:pb-12 space-y-10 sm:space-y-20 md:space-y-24">
         <div id="calculator" className="animate-fade-rise-delay-3 max-w-7xl mx-auto scroll-mt-24">
           <AgeCalculator />
         </div>

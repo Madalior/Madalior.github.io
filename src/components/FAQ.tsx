@@ -36,7 +36,7 @@ export default function FAQ() {
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto px-6 py-16 md:py-24 flex flex-col items-center relative z-10">
+    <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-16 md:py-24 flex flex-col items-center relative z-10">
       <div className="mb-12 md:mb-16 text-center">
         <h2 className="text-4xl md:text-5xl lg:text-7xl font-display mb-4 md:mb-6 tracking-tight text-foreground">
           Frequently Asked <span className="text-muted-foreground/80">Questions</span>

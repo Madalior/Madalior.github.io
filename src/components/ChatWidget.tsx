@@ -88,7 +88,8 @@ export default function ChatWidget() {
 
       {/* Chat Window */}
       <div
-        className={`fixed bottom-20 right-3 left-3 sm:left-auto sm:right-6 sm:w-[380px] z-[99] h-[60vh] sm:h-[520px] max-h-[520px] flex flex-col liquid-glass rounded-2xl shadow-2xl transition-all duration-300 origin-bottom-right ${isOpen ? 'scale-100 opacity-100' : 'scale-0 opacity-0 pointer-events-none'}`}
+        className={`fixed z-[99] flex flex-col liquid-glass rounded-2xl shadow-2xl transition-all duration-300 origin-bottom-right ${isOpen ? 'scale-100 opacity-100' : 'scale-0 opacity-0 pointer-events-none'}`}
+        style={{ bottom: '5rem', right: '0.75rem', width: 'min(380px, calc(100vw - 1.5rem))', height: 'min(520px, 65vh)' }}
       >
         {/* Header */}
         <div className="flex items-center justify-between p-4 border-b border-white/10 bg-white/5 rounded-t-2xl">
