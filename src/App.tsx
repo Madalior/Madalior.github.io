@@ -1,3 +1,4 @@
+// SarkariCalc v2.0 - Chat assistant removed
 import React, { useState } from 'react';
 import AgeCalculator from './components/AgeCalculator';
 import ExamDirectory from './components/ExamDirectory';
