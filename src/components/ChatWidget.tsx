@@ -75,16 +75,20 @@ export default function ChatWidget() {
     <>
       {/* Floating Action Button */}
       <button
-        onClick={() => setIsOpen(true)}
-        className={`fixed bottom-6 right-6 z-[100] p-4 rounded-full bg-foreground text-background shadow-2xl hover:scale-110 transition-all duration-300 ${isOpen ? 'scale-0 opacity-0 pointer-events-none' : 'scale-100 opacity-100'}`}
+        onClick={() => setIsOpen(!isOpen)}
+        className={`fixed bottom-6 right-6 z-[100] p-4 rounded-full shadow-2xl transition-all duration-300 ${
+          isOpen
+            ? 'bg-white/20 text-foreground border border-white/20'
+            : 'bg-foreground text-background hover:scale-110'
+        }`}
         aria-label="Open SarkariCalc Assistant"
       >
-        <MessageSquare className="w-6 h-6" />
+        {isOpen ? <X className="w-6 h-6" /> : <MessageSquare className="w-6 h-6" />}
       </button>
 
       {/* Chat Window */}
       <div
-        className={`fixed bottom-6 right-4 sm:right-6 z-[100] w-[calc(100vw-2rem)] sm:w-[380px] h-[480px] sm:h-[520px] max-h-[85vh] flex flex-col liquid-glass rounded-2xl shadow-2xl transition-all duration-300 origin-bottom-right ${isOpen ? 'scale-100 opacity-100' : 'scale-0 opacity-0 pointer-events-none'}`}
+        className={`fixed bottom-20 right-3 left-3 sm:left-auto sm:right-6 sm:w-[380px] z-[99] h-[60vh] sm:h-[520px] max-h-[520px] flex flex-col liquid-glass rounded-2xl shadow-2xl transition-all duration-300 origin-bottom-right ${isOpen ? 'scale-100 opacity-100' : 'scale-0 opacity-0 pointer-events-none'}`}
       >
         {/* Header */}
         <div className="flex items-center justify-between p-4 border-b border-white/10 bg-white/5 rounded-t-2xl">
