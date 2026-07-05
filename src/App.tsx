@@ -154,7 +154,7 @@ export default function App() {
       </main>
 
       {/* Content Sections */}
-      <section className="relative z-10 w-full px-4 sm:px-6 pb-20 sm:pb-28 md:pb-32 space-y-20 sm:space-y-24">
+      <section className="relative z-10 w-full px-4 sm:px-6 pb-8 sm:pb-12 space-y-20 sm:space-y-24">
         <div id="calculator" className="animate-fade-rise-delay-3 max-w-7xl mx-auto scroll-mt-24">
           <AgeCalculator />
         </div>
@@ -220,10 +220,10 @@ export default function App() {
                 We're continuously updating exam data based on official notifications from UPSC,
                 SSC, RRB, IBPS, and State PSCs. Have a suggestion or found an error?{' '}
                 <a
-                  href="mailto:contact@sarkaricalc.me"
+                  href="mailto:aakashvibezzz@gmail.com"
                   className="text-foreground underline underline-offset-4 hover:text-white transition-colors"
                 >
-                  contact@sarkaricalc.me
+                  aakashvibezzz@gmail.com
                 </a>
               </p>
             </div>
