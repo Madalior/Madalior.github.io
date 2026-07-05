@@ -1,0 +1,6 @@
+{
+  "name": "Velorah Age Calculator",
+  "description": "An age eligibility calculator for Indian government exams.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
