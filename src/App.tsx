@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import AgeCalculator from './components/AgeCalculator';
 import ExamDirectory from './components/ExamDirectory';
 import FAQ from './components/FAQ';
-import ChatWidget from './components/ChatWidget';
 import { Menu, X } from 'lucide-react';
 
 export default function App() {
@@ -261,8 +260,6 @@ export default function App() {
           </div>
         </div>
       </footer>
-
-      <ChatWidget />
     </div>
   );
 }
