@@ -109,8 +109,46 @@ export default function ExamDirectory() {
         )}
       </div>
 
-      {/* Exam Table */}
-      <div className="w-full mt-8 md:mt-10 liquid-glass rounded-2xl overflow-hidden overflow-x-auto">
+      {/* Mobile Card View */}
+      <div className="w-full mt-8 md:mt-10 flex flex-col gap-3 md:hidden">
+        {displayedExams.map(([name, exam]) => (
+          <div key={name} className="liquid-glass rounded-2xl p-4 border border-white/10">
+            <div className="flex items-start justify-between gap-2 mb-3">
+              <div>
+                <div className="font-medium text-foreground text-sm leading-snug">{name}</div>
+                <div className="text-[10px] uppercase tracking-widest text-muted-foreground mt-1">{exam.group}</div>
+              </div>
+              <div className="text-right shrink-0">
+                <div className="text-xs text-muted-foreground">Cut-off Date</div>
+                <div className="text-sm font-medium text-foreground mt-0.5">
+                  {new Date(exam.cutoffDate).toLocaleDateString('en-IN', { month: 'short', day: 'numeric', year: 'numeric' })}
+                </div>
+              </div>
+            </div>
+            <div className="grid grid-cols-3 gap-2 pt-3 border-t border-white/10">
+              {[
+                { label: 'General', max: exam.maxAge.general, marks: exam.cutoffMarks?.general },
+                { label: 'OBC', max: exam.maxAge.obc, marks: exam.cutoffMarks?.obc },
+                { label: 'SC/ST', max: exam.maxAge.sc_st, marks: exam.cutoffMarks?.sc_st },
+              ].map((cat) => (
+                <div key={cat.label} className="bg-white/5 rounded-xl p-2.5 text-center">
+                  <div className="text-[10px] text-muted-foreground uppercase tracking-widest mb-1">{cat.label}</div>
+                  <div className="text-sm font-medium text-foreground">{exam.minAge}–{cat.max}</div>
+                  <div className="text-[10px] text-muted-foreground mt-0.5">Marks: {cat.marks || 'N/A'}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+        {filteredExams.length === 0 && (
+          <div className="p-12 text-center text-muted-foreground">
+            No exams found matching your search.
+          </div>
+        )}
+      </div>
+
+      {/* Desktop Table View */}
+      <div className="hidden md:block w-full mt-8 md:mt-10 liquid-glass rounded-2xl overflow-hidden overflow-x-auto">
         <table className="w-full text-left border-collapse min-w-[700px]">
           <thead>
             <tr className="border-b border-white/10 bg-white/5 text-xs sm:text-sm text-muted-foreground">
@@ -155,6 +193,7 @@ export default function ExamDirectory() {
           </div>
         )}
       </div>
+
 
       {visibleCount < filteredExams.length && (
         <div className="mt-8 flex justify-center w-full">
